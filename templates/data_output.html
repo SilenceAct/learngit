@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style type="text/css">
+                .top{
+                    width: 100%;
+                    height: 80px;
+                    background: rgba(60, 106, 178, 0.91);
+                    position: fixed;
+                    top: 0;
+                }
+                .main {
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    margin:-150px 0 0 -200px;
+                    width:400px;
+                    height:300px;
+                    background-color: gainsboro;
+                    border:1px solid #28fff3;
+
+                }
+                .bottom{
+                    width: 100%;
+                    height: 80px;
+                    background: rgba(60, 106, 178, 0.91);
+                    position: fixed;
+                    bottom: 0px;
+                }
+            </style>
+</head>
+<body>
+
+        <div class = "top">
+            <h1>采伐数据自动检查系统</h1>
+        </div>
+
+        <div class="row" style="text-align:center;height:50px; margin-top:80px;background-color: rgba(63,151,178,0.91)">
+            <div class="col-md-2"><a href="/upload"><h5 style="color: black">上传数据</h5></a></div>
+            <div class="col-md-2"><a href="/find"><h5 style="color: black">数据检索</h5></a></div>
+            <div class="col-md-2"><a href="/data_output"><h5 style="color: black">数据导出</h5></a></div>
+            <div class="col-md-2"><a href="#"><h5 style="color: black">联系我们</h5></a></div>
+            <div class="col-md-2"><a href="/"><h5 style="color: black">退出系统</h5></a></div>
+        </div>
+        <div class="main" >
+
+            <div>
+
+                <form method="get" action="/getformname2">
+                    <button class="btn btn-default" style="margin-top: 30px;margin-left: 15px"> 查看可选项-表名</button>
+                </form>
+
+                <div style="width: 150px;height: 200px;border:1px solid #28fff3;margin-left: 15px;margin-top: 10px">
+                    {{ formname }}
+                </div>
+
+            </div>
+
+            <div style="Float:right;width: 100px ;margin-top: -237px;margin-right: 80px;">
+                <form method="get" action="/down">
+                    <div class="form-group" style="width: 350px">
+                        <label for="exampleInputPassword1"> 数据导出-选择一个表名： </label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="getname" placeholder="FORM-NAME" style="width: 150px;margin-top: 30px">
+                    </div>
+
+                    <button class="btn btn-default" type="submit"> 数据导出 </button>
+
+
+                </form>
+                <button class="btn btn-default"> <a href="data_output.html">刷新</a> </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="bottom">
+            <h4 align="center">Copyright</h4>
+        </div>
+</body>
+</html>

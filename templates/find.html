@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style type="text/css">
+                .top{
+                    width: 100%;
+                    height: 80px;
+                    background: rgba(60, 106, 178, 0.91);
+                    position: fixed;
+                    top: 0;
+                }
+                .main {
+                    position: absolute;
+                    top:50%;
+                    left:20%;
+                    margin:-150px 20px 0 -200px;
+                    width:1200px;
+                    height:400px;
+                    background-color: gainsboro;
+                    border:1px solid #28fff3;
+
+                }
+                .bottom{
+                    width: 100%;
+                    height: 80px;
+                    background: rgba(60, 106, 178, 0.91);
+                    position: fixed;
+                    bottom: 0px;
+                }
+                .form-group{
+                    width: 180px;
+                }
+            </style>
+
+</head>
+<body background="/image/b.png">
+
+        <div class = "top">
+            <h1>采伐数据自动检查系统</h1>
+        </div>
+
+        <div class="row" style="text-align:center;height:50px; margin-top:80px;background-color: rgba(63,151,178,0.91)">
+            <div class="col-md-2"><a href="/upload"><h5 style="color: black">上传数据</h5></a></div>
+            <div class="col-md-2"><a href="/find"><h5 style="color: black">数据检索</h5></a></div>
+            <div class="col-md-2"><a href="/data_output"><h5 style="color: black">数据导出</h5></a></div>
+            <div class="col-md-2"><a href="#"><h5 style="color: black">联系我们</h5></a></div>
+            <div class="col-md-2"><a href="/"><h5 style="color: black">退出系统</h5></a></div>
+        </div>
+        <div class="main" >
+
+            <div class="container" style="margin-top: 20px">
+
+                <h5>数据检索</h5>
+                <form class="form-inline" method="get" action="/finder">
+
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail3">site</label>
+                    <input type="text" class="form-control" name = "site" placeholder="Site">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword3">machine</label>
+                    <input type="text" class="form-control" name="machine" placeholder="machine">
+                  </div>
+                    <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword3">stem_no</label>
+                    <input type="text" class="form-control" name="stem_no" placeholder="stem_no">
+                  </div>
+                    <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword3">log_no</label>
+                    <input type="text" class="form-control" name="log_no" placeholder="log_no">
+                  </div>
+                    <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword3">product_de</label>
+                    <input type="text" class="form-control" name="product" placeholder="product_de">
+                  </div>
+                    <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword3">formname</label>
+                    <input type="text" class="form-control" name="formname" placeholder="form_name">
+                  </div>
+
+
+                    <button type="submit" class="btn btn-default" style="margin-top: 10px">Find</button>
+                    <button class="btn btn-default" style="margin-top: 10px"> <a href="/find" >刷新</a></button>
+                </form>
+
+
+            </div>
+
+            <div class="container" style="margin-top: 15px;height: 200px;width: 1100px;border:1px solid #28fff3;text-align:center " >{{ name }}</div>
+
+        </div>
+
+        <div style="width: 180px;height:400px;float: right;margin-top: 78px;margin-right: 10px;background-color: gainsboro;">
+            <form method="get" action="/getformname">
+                <button class="btn btn-default" style="margin-top: 40px;margin-left: 10px"> 查看可选项-表名</button>
+            </form>
+            <div style="width: 150px;height: 300px;border:1px solid #28fff3;margin-left: 15px;margin-top: 10px">
+                {{ formname }}
+            </div>
+        </div>
+
+        <div class="bottom">
+            <h4 align="center">Copyright</h4>
+        </div>
+</body>
+</html>
